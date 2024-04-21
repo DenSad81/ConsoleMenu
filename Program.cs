@@ -7,30 +7,35 @@ class Program
         Random random = new Random();
         string text = "just text";
         string command;
-        bool IsWork = true;
+        bool isWork = true;
+        string commandInput = "input";
+        string commandPrint = "print";
+        string commandRandom = "random";
+        string commandClear = "clear";
+        string commandExit = "exit";
 
         Console.WriteLine("Список доступных команд:");
-        Console.WriteLine("input");
-        Console.WriteLine("print");
-        Console.WriteLine("random");
-        Console.WriteLine("clear");
-        Console.WriteLine("exit");
+        Console.WriteLine(commandInput);
+        Console.WriteLine(commandPrint);
+        Console.WriteLine(commandRandom);
+        Console.WriteLine(commandClear);
+        Console.WriteLine(commandExit);
 
-        while (IsWork)
+        while (isWork)
         {
             Console.Write("Ваша команда: ");
             command = Console.ReadLine();
 
-            if (command == "input")
+            if (command == commandInput)
                 text = Console.ReadLine();
-            else if (command == "print")
+            else if (command == commandPrint)
                 Console.WriteLine(text);
-            else if (command == "random")
+            else if (command == commandRandom)
                 Console.WriteLine($"Рандомное число: {random.Next(0, maxRandomValue)}");
-            else if (command == "clear")
+            else if (command == commandClear)
                 Console.Clear();
-            else if (command == "exit")
-                IsWork = false;
+            else if (command == commandExit)
+                isWork = false;
         }
     }
 }
